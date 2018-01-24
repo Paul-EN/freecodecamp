@@ -1,0 +1,32 @@
+/*-----Body-----*/
+body {
+  background-color: #EFEFEF;
+  margin-top: 65px;
+}
+
+.anchor {
+    padding-top: 65px;
+}
+
+img.sample {
+  width: 300px;
+  height: 300px;
+  border-style: dotted;
+  border-color: #222222;
+  border-width: 4px;
+  border-radius: 100%;
+}
+
+.sample-set {
+  margin: 20px;
+  text-align: center;
+
+}
+
+img.sample:hover {
+  opacity: 0.7;
+}
+
+.title {
+  text-align: center;
+}
