@@ -6,7 +6,7 @@
 /*-----Body-----*/
 body {
   background-color: #EFEFEF;
-  margin-top: 65px;
+  margin-top: 80px;
 }
 
 .anchor {
@@ -14,10 +14,35 @@ body {
   margin-top: -50px;
 }
 
-.intro {
-  height: 600px;
-  /*background-image: url('./images/bg-image.jpg');*/
-  background-color: #A9A9A9;
+.about {
+  position: relative;
+}
+
+/*.about-text {
+  max-width: 60%;
+}*/
+
+.top-left {
+  position: absolute;
+  top: 25%;
+  left: 15%;
+  font-size: 1.5em;
+  max-width: 55%;
+  max-height: 35%;
+}
+
+.bg-about {
+  border-radius: 50px;
+  border: 20px solid #FAFAFA;
+  box-shadow: 0 0 15px #CCCCCC;
+}
+
+.portfolio {
+  padding: 100px 0;
+}
+
+#portfolio {
+  padding-bottom: 30px;
 }
 
 img.sample {
@@ -50,9 +75,6 @@ img.sm-links {
 .contact {
   padding-bottom: 20px;
   border: 4px dashed #dddddd;
-}
-
-footer {
 }
 
 .social-media {
