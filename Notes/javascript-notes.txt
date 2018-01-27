@@ -915,3 +915,218 @@ Here is a nested object:
   };
   ourStorage.cabinet["top drawer"].folder2; // "secrets"
   ourStorage.desk.drawer; // "stapler"
+
+As we have seen in earlier exmaples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, Array bracket notation can be chained to access nested arrays.
+Here is an example of how to access a nested array:
+  var ourPets = [
+    {
+      animalType: "cat",
+      names: [
+        "Meowzer",
+        "Fluffy",
+        "Kit-Cat"
+      ]
+    },
+    {
+      animalType: "dog",
+      names: [
+        "Spot",
+        "Bowser",
+        "Frankie"
+      ]
+    }
+  ];
+  ourPets[0].names[1]; // "Fluffy"
+  ourPets[1].names[2]; // "Frankie"
+
+You can run the same code multiple times by using a loop.
+The most common type of JavaScript loop is called a "for loop" because it runs "for" a specific number of times.
+For loops are declared with three optional expressions separated by semicolons:
+  for ([initialization]; [condition]; [final-expression])
+The initialization statement is executed one time only before the loop starts. It is typically used to define and setup your loop variable.
+The condition statement is evaluated at the beginning of every loop iteration and will continue as long as it evaluates to true. When condition is false at the start of the iteration, the loop will stop executing. This means if condition starts as false, your loop will never execute.
+The final-expression is executed at the end of each loop iteration, prior to the next condition check and is usually used to increment or decrement your loop counter.
+In the following example we initialize i = 0 and iterate while our condition i < 5 is true. We'll increment i by 1 in each loop iteration with i++ as our final-expression.
+  var ourArray = [];
+  for (var i = 0; i < 5; i++) {
+    ourArray.push(i);
+  }
+ourArray will now contain [0, 1, 2, 3, 4]
+
+For loops don't have to iterate one at a time. By changing our final-expression, we can count by even numbers.
+We'll start at i = 0 and loop while i < 10. We'll increment i by 2 each loop with i += 2.
+  var ourArray = [];
+  for (var i = 0; i < 10; i += 2) {
+    ourArray.push(i);
+  }
+ourArray will now contain [0,2,4,6,8].
+Let's change our initialization so we can count by odd numbers.
+
+A for loop can also count backwards, so long as we can define the right conditions.
+In order to count backwards by twos, we'll need to change our initialization.
+We'll start at i = 10 and loop while i > 10. We'll decrement i by 2 each loop with i -= 2.
+  var ourArray = [];
+  for (var i=10; i > 0; i-=2) {
+    ourArray.push(i);
+  }
+ourArray will now contain [10,8,6,4,2].
+Let's change our initialization and final-expression so we can count backwards by twos by odd numbers.
+
+A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a for loop. This code will output each element of the array arr to the console.
+  var arr = [10,9,8,7,6];
+  for var i=0; i < arr.length; i++) {
+    console.log(arr[i]);
+  }
+Remember that Arrays have zero-based numbering, which means the last index of the array is length -1. Our condition for this loop is i < arr.length, which stops when i is at length -1.
+
+If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. Here is an example:
+  var arr = [
+    [1,2], [3,4], [5,6]
+  ];
+  for (var i = 0; i < arr.length; i++) {
+    for (var j = 0; j < arr[i].length; j++) {
+      console.log(arr[i][j]);
+    }
+  }
+This outputs each sub-element in arr one at a time. Note that for the inner loop, we are checking the .length of arr[i], since arr[i] is itself an array.
+
+You can run the same code multiple times by using a loop.
+Another type of JavaScript loop is called a "while loop", because it runs "while" a specified condition is true and stops once that condition is no longer true.
+  var ourArray = [];
+  var i = 0;
+  while(i < 5) {
+    ourArray.push(i);
+    i++;
+  }
+Let's try getting a while loop to work by pushing values to an array.
+
+We have an array of objects representing different people in our contacts lists.
+A lookUpProfile function that takes firstName and a property (prop) as arguments has been pre-written for you.
+The function should check if firstName is an actual contact's firstName and the given property (prop) is a property of that conctact.
+If both are true, then return the "value" of that property.
+If firstName does not correspond to any contacts then return "No such contact"
+If prop does not correspond to any valid properties then return "No such property"
+  //Setup
+  var contacts = [
+    {
+        "firstName": "Akira",
+        "lastName": "Laine",
+        "number": "0543236543",
+        "likes": ["Pizza", "Coding", "Brownie Points"]
+    },
+    {
+        "firstName": "Harry",
+        "lastName": "Potter",
+        "number": "0994372684",
+        "likes": ["Hogwarts", "Magic", "Hagrid"]
+    },
+    {
+        "firstName": "Sherlock",
+        "lastName": "Holmes",
+        "number": "0487345643",
+        "likes": ["Intriguing Cases", "Violin"]
+    },
+    {
+        "firstName": "Kristian",
+        "lastName": "Vos",
+        "number": "unknown",
+        "likes": ["Javascript", "Gaming", "Foxes"]
+    }
+  ];
+
+
+  function lookUpProfile(firstName, prop){
+  // Only change code below this line
+
+  for (var x = 0; x < contacts.length; x++) {
+   if (contacts[x].firstName === firstName) {
+     if (contacts[x].hasOwnProperty(prop)) {
+       return contacts[x][prop];
+     } else {
+       return "No such property";
+     }
+   }
+  } return "No such contact";
+  // Only change code above this line
+  }
+
+  // Change these values to test your function
+  lookUpProfile("Akira", "likes");
+
+Random numbers are useful for creating random behavior.
+JavaScript has a Math.random() function that generates a random decimal number between 0 (inclusive) and not quite up to 1 (exclusive). Thus Math.random() can return a 0 but never quite return a 1.
+Note:
+  Like Storing Values with the Equal Operator, all function calls will be resolved before the return executes, so we can return the value of the Math.random() function.
+  function randomFraction() {
+    return Math.random();
+  }
+
+It's great that we can generate random decimal numbers, but it's even more useful if we use it to generate random whole numbers.
+  1. Use Math.random() to generate a random decimal.
+  2. Multiply that random decimal by 20.
+  3. Use another function, Math.floor() to round the number down to its nearest whole number.
+Remember that Math.random() can never quite return a 1 and, because we're rounding down, it's impossible to actually get 20. This technique will give us a whole number between 0 and 19.
+Putting everything together, this is what our code looks like:
+  Math.floor(Math.random() * 20);
+We are calling Math.random(), multiplying the result by 20, then passing the value to Math.floor() function to round the value down to the nearest whole number.
+
+Instead of generating a random number between zero and a given number like we did before, we can generate a random number that falls within a range of two specific numbers.
+To do this, we'll define a minimum number min and a maximum number max.
+Here's the formula we'll use. Take a moment to read it and try to understand what this code is doing:
+Example:
+  Math.floor(Math.random() * (max - min + 1)) + min
+Solution:
+  function randomRange(myMin, myMax) {
+    return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
+  }
+
+  var myRandom = randomRange(5, 15);
+
+Regular expressions are used to find certain words or patterns inside of strings.
+For example, if we wanted to find the word 'the' in the string 'The dog chased the cat', we could use the following regular expression: /the/hi
+Let's break this down a bit:
+  / is the start of the regular expression.
+  'the' is the pattern we want to match.
+  / is the end of the regular expression.
+  'g' means global, which auses the pattern to return all matches in the string, not just the first.
+  'i' means that we want to ignore the case (uppercase or lowercase) when searching for the pattern
+Example:
+  var testString = "Ada Lovelace and Charles Babbage designed the first computer and the software that would have run on it.";
+
+  var expression = /and/gi;  // Change this Line
+
+  // This code counts the matches of expression in testString
+  var andCount = testString.match(expression).length;
+
+We can use special selectors in Regular Expressions to select a particular type of value.
+One such selector is the digit selector \d which is used to retrieve on digit (e.g. numbers 0 to 9) in a string.
+In JavaScript, it is used like this: /\d/g
+Appending a plus sign (+) after the selector, e.g. /\d+/g, allows this regular expression to match one or more digits.
+The trailing g is short for 'global', which allows this regular expression to find all matches rather than stop at the first match.
+Example:
+  var testString = "There are 3 cats but 4 dogs.";
+  var expression = /\d+/g;
+  var digitCount = testString.match(expression).length;
+
+We can also use regular expression selectors like \s to find whitespace in a string.
+The whitespace characters are " " (space), \r (the carriage return), \n (newline), \t (tab), and \f (the form feed).
+The whitespace regular expression looks like this: /\s+/g
+Example:
+  var testString = "How many spaces are there in this sentence?";
+  var expression = /\s+/g;
+  var spaceCount = testString.match(expression).length;
+
+You can invert any match by using the uppercase version of the regular expression selector.
+For example, \s will match any whitespace, and \S will match anything that isn't whitespace.
+Example:
+  var testString = "How many non-space characters are there in this sentence?";
+  var expression = /.+/g;
+  var nonSpaceCount = testString.match(expression).length;
+
+Before we dive into Object Oriented Programming, let's revisit JavaScript objects.
+Give your motorBike object a wheels, engines, and seats attribute and set them to numbers.
+  var motorBike = {
+    "wheels":2,
+    "engines":1,
+    "seats":1
+  };
