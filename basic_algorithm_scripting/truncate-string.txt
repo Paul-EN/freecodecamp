@@ -1,0 +1,28 @@
+/*Truncate a string*/
+
+function truncateString(str, num) {
+  var ellipsis = "...";
+  var strLength = str.length;
+  var cutLength = num - 3;
+  var cutStr = str.slice(0, cutLength);
+  var resultStr = "";
+
+  if (num > 3) {
+    if (strLength > num) {
+      resultStr = cutStr + ellipsis;
+    } else if (strLength <= num) {
+        return str;
+      }
+  } else if (num <= 3) {
+      if (strLength <= 3) {
+        resultStr = str.slice(0, num) + ellipsis;
+      } else if (strLength > 3) {
+          resultStr = str.slice(0, num) + ellipsis;
+        }
+    }
+
+  return resultStr;
+
+}
+
+truncateString("A-tisket a-tasket A green and yellow basket", 11);

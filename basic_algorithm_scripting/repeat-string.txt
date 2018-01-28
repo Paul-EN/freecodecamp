@@ -1,0 +1,22 @@
+/*Repeat a string repeat a string*/
+
+function repeatStringNumTimes(str, num) {
+  var repeats = 0;
+  var array = [];
+  var result = [];
+
+  if (num < 0) {
+    return "";
+  } else {
+      for (var i = 0; i < num; i++) {
+        array.push(str);
+      }
+
+      result = array.join("");
+
+    }
+
+    return result;
+}
+
+repeatStringNumTimes("abc", 3);
