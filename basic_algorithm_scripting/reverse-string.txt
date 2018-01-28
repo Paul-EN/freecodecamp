@@ -1,4 +1,4 @@
--Reverse a String-
+/*Reverse a String*/
 
 function reverseString(str) {
   var newString = [];

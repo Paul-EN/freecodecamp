@@ -1,4 +1,4 @@
--Factorialize a Number-
+/*Factorialize a Number*/
 
 function factorialize(num) {
   var result = 1;

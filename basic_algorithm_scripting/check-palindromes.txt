@@ -1,4 +1,4 @@
--Check for Palindromes-
+/*Check for Palindromes*/
 
 function palindrome(str) {
   var filteredStr = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();

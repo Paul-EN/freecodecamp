@@ -1,4 +1,4 @@
--Title Case a Sentence-
+/*Title Case a Sentence*/
 
 function titleCase(str) {
   var strArray = [];

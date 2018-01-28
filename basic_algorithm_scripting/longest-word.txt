@@ -1,4 +1,4 @@
--Find the Longest Word in a String-
+/*Find the Longest Word in a String*/
 
 function findLongestWord(str) {
   var strArray = [];
