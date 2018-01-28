@@ -1,7 +1,6 @@
 /*Repeat a string repeat a string*/
 
 function repeatStringNumTimes(str, num) {
-  var repeats = 0;
   var array = [];
   var result = [];
 
