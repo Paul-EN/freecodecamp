@@ -1,0 +1,22 @@
+-Check for Palindromes-
+
+function palindrome(str) {
+  var filteredStr = str.replace(/[^A-Za-z0-9]/g, '').toLowerCase();
+  var revStrArray = [];
+  var resStr = "";
+
+  for (var i = 0; i < filteredStr.length; i++) {
+    revStrArray.push(filteredStr.charAt(i));
+  }
+
+  revStrArray.reverse();
+  resStr = revStrArray.join("");
+
+  if (filteredStr === resStr) {
+    return true;
+  } else {
+    return false;
+    }
+}
+
+palindrome("eye");

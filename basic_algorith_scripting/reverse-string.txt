@@ -1,0 +1,19 @@
+-Reverse a String-
+
+function reverseString(str) {
+  var newString = [];
+
+  var result = "";
+
+  for (var i = 0; i < str.length; i++) {
+    newString.push(str.charAt(i));
+  }
+
+  newString.reverse();
+
+  result = newString.join("");
+
+  return result;
+}
+
+reverseString("hello");
