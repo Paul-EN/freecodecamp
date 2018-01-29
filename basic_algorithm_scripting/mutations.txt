@@ -1,0 +1,28 @@
+/*Mutations*/
+
+function mutation(arr) {
+  var lcStr0 = arr[0].toLowerCase(); // hello
+  var lcStr1 = arr[1].toLowerCase(); // hey
+  var tempArr = [];
+
+  for (var i = 0; i <= lcStr1.length; i++) {
+    var srchRes = lcStr0.search(lcStr1.charAt(i));
+
+    tempArr.push(srchRes);
+    tempArr.sort(function (a, b) {
+      return a - b;
+    });
+
+    if (tempArr[0] != -1) {
+      return true;
+    } else {
+        return false;
+      }
+  }
+
+}
+
+mutation(["hello", "hey"]);
+
+STILL IN PROGRESS:
+'hello' and 'hey' keep returning falsely 'true', while all the rest are working just fine.

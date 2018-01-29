@@ -1,0 +1,33 @@
+/*Chunky Monkey*/
+
+function chunkArrayInGroups(arr, size) {
+  var extStr = [];
+  var result = [];
+  var i = 0;
+  var x = 0;
+
+  for (i; i < arr.length; i += size) {
+      extStr = arr.slice(i, x += size);
+      result.push(extStr);
+  }
+
+  /*
+  Essentially, this is what I need it to do for each set of arguments,
+  except it adjust automatically for the lengths.
+
+  extStr = arr.slice(0, size);
+  result.push(extStr);
+  extStr = arr.slice(0 + size, size + size);
+  result.push(extStr);
+  extStr = arr.slice(0 + size + size, size + size + size);
+  result.push(extStr);
+  extStr = arr.slice(0 + size + size + size, size + size + size + size);
+  result.push(extStr);
+  extStr = arr.slice(-remainder);
+  result.push(extStr);
+  */
+
+  return result;
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
