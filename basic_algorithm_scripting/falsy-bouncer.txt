@@ -1,0 +1,29 @@
+/* Falsy Bouncer */
+
+function bouncer(arr) {
+  var y = new Boolean(false);
+  var newArr = [];
+
+  for (var i = 0; i < arr.length; i++) {
+    var x = arr[i] != y;
+    newArr.push(x);
+  }
+
+  // return newArr; // returns [true,true,false,false,true] as expected
+
+  newArr.sort(function (a, b) {
+    return a - b;
+  });
+
+  return newArr; // after sorting, now returns [false,false,true,true,true]
+
+  /* First test to verify comparison to Boolean object works
+  if (arr[4] == y) {
+    return false;
+  } else {
+      return true;
+    }
+  */
+}
+
+bouncer([7, "ate", "", false, 9]);

@@ -1,28 +1,76 @@
-/*Mutations*/
+/* Mutations */
 
 function mutation(arr) {
-  var lcStr0 = arr[0].toLowerCase(); // hello
-  var lcStr1 = arr[1].toLowerCase(); // hey
-  var tempArr = [];
+  /* Version 3 - FINALLY WORKS */
+  var string0 = arr[0].toLowerCase();
+  var string1 = arr[1].toLowerCase();
+  var holdingArr = [];
 
-  for (var i = 0; i <= lcStr1.length; i++) {
-    var srchRes = lcStr0.search(lcStr1.charAt(i));
+  for (var i = 0; i <= string1.length; i++) {
+    var srchRes = string0.search(string1.charAt(i));
+    holdingArr.push(srchRes);
+  }
 
-    tempArr.push(srchRes);
-    tempArr.sort(function (a, b) {
+  holdingArr.sort(function (a, b) {
       return a - b;
     });
 
-    if (tempArr[0] != -1) {
+  if (holdingArr[0] < 0) {
+    return false;
+  } else {
+      return true;
+  }
+
+  /* Version 2
+  var lcStr0 = arr[0].toLowerCase(); // hello
+  var lcStr1 = arr[1].toLowerCase(); // hey
+  var concStr = lcStr0.concat(lcStr1);
+  var holdingArr = [];
+
+  for (var i = 0; i <= concStr.length; i++) {
+    var srchRes0 = concStr.search(lcStr0.charAt(i));
+    var srchRes1 = concStr.search(lcStr1.charAt(i));
+
+    holdingArr.push(srchRes0);
+    holdingArr.push(srchRes1);
+
+    return holdingArr;
+    holdingArr.sort(function (a, b) {
+      return a - b;
+    });
+
+    if (holdingArr[0] != -1) {
       return true;
     } else {
         return false;
       }
-  }
+  }*/
+
+  /* Version 1
+  var lcStr0 = arr[0].toLowerCase(); // hello
+  var lcStr1 = arr[1].toLowerCase(); // hey
+  var holdingArr = [];
+
+  for (var i = 0; i <= lcStr1.length; i++) {
+    var srchRes = lcStr0.search(lcStr1.charAt(i));
+    //cycles through characters of second argument and searches for them in first argument
+    //returns index of character if found
+    //returns -1 if not found
+
+    //this part assigns those indexes to an array and sorts them least-to-greates
+    holdingArr.push(srchRes);
+    holdingArr.sort(function (a, b) {
+      return a - b;
+    });
+
+    //checks if the first (least) index is a -1 and returns true or false
+    if (holdingArr[0] != -1) {
+      return true;
+    } else {
+        return false;
+      }
+  }*/
 
 }
 
 mutation(["hello", "hey"]);
-
-STILL IN PROGRESS:
-'hello' and 'hey' keep returning falsely 'true', while all the rest are working just fine.
