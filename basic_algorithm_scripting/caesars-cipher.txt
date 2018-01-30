@@ -1,0 +1,33 @@
+/* Caesars Cipher */
+
+function rot13(str) { // LBH QVQ VG!
+  var codeArr = [];
+  var shftCode = [];
+
+  for (var i = 0; i < str.length; i++) {
+    codeArr.push(str.charCodeAt(i));
+  }
+
+  for (var j = 0; j < codeArr.length; j++) {
+    var tempCode;
+
+    if (codeArr[j] < 65) {
+      shftCode.push(codeArr[j]);
+    } else {
+        if (codeArr[j] < 78) {
+          tempCode = (codeArr[j] - 13) + 26;
+          shftCode.push(tempCode);
+        } else {
+            tempCode = codeArr[j] - 13;
+            shftCode.push(tempCode);
+          }
+      }
+
+    }
+
+  return String.fromCharCode.apply(null, shftCode);
+
+}
+
+// Change the inputs below to test
+rot13("SERR PBQR PNZC");

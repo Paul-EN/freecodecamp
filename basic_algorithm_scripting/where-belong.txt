@@ -1,0 +1,20 @@
+/* Where Do I Belong */
+
+function getIndexToIns(duck, goose) {
+  var duckDuck = duck.sort(function (a, b) { return a - b; });
+
+  var place = duckDuck.findIndex(function youRe(it) {
+    if (it >= goose) {
+      return it;
+    }
+  });
+
+  if (place == -1) {
+    return duckDuck.length;
+  } else {
+      return place;
+    }
+
+}
+
+getIndexToIns([2, 5, 10, 12, 20, 19, 16, 16, 18, 7, 9, 4, 14, 17], 21);
