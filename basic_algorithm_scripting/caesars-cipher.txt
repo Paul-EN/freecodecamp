@@ -15,7 +15,7 @@ function rot13(str) { // LBH QVQ VG!
       shftCode.push(codeArr[j]);
     } else {
         if (codeArr[j] < 78) {
-          tempCode = (codeArr[j] - 13) + 26;
+          tempCode = codeArr[j] + 13;
           shftCode.push(tempCode);
         } else {
             tempCode = codeArr[j] - 13;
