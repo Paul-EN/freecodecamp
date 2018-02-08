@@ -1,6 +1,25 @@
 /* Seek and Destroy */
 
-//Failed - Was not able to figure out on my own.
+// Feb. 8th, 2018 - Managed to figure out alternative solution on my own.
+
+function destroyer(arr) {
+  var deleteFrom = arguments[0];
+  for (var i = 0; i < deleteFrom.length; i++) {
+    for (var j = 1; j < arguments.length; j++) {
+      if (deleteFrom[i] === arguments[j]) {
+          deleteFrom.splice(i, 1);
+          i--;
+      } else continue;
+    }
+  }
+  return deleteFrom;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+--------------------------------------------------------------------------------
+
+// Jan. 29th, 2018 - Failed - Was not able to figure out on my own.
 
 function destroyer(arr) {
   var args = Array.prototype.slice.call(arguments);
